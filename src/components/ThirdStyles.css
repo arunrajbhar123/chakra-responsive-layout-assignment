@@ -1,0 +1,11 @@
+@media all and (max-width: 420px) {
+  
+  .Box {
+    padding: 0.2rem;
+    width: 100%;
+    grid-template-rows:repeat(3,1fr);
+    grid-template-columns: repeat(2,1fr);
+   
+  }
+
+}

@@ -3,38 +3,35 @@ import {
   ChakraProvider,
   Box,
   Text,
-  Link,
+ 
   VStack,
   Code,
   Grid,
   theme,
+  Stack,Container
 } from '@chakra-ui/react';
-import { ColorModeSwitcher } from './ColorModeSwitcher';
-import { Logo } from './Logo';
+
+import { Link, Routes, Route } from 'react-router-dom';
+import LayoutFirst from "./components/LayoutFirst";
+import LayoutSecond from "./components/LayoutSecond";
+import LayoutThird from "./components/LayoutThird";
 
 function App() {
   return (
     <ChakraProvider theme={theme}>
-      <Box textAlign="center" fontSize="xl">
-        <Grid minH="100vh" p={3}>
-          <ColorModeSwitcher justifySelf="flex-end" />
-          <VStack spacing={8}>
-            <Logo h="40vmin" pointerEvents="none" />
-            <Text>
-              Edit <Code fontSize="xl">src/App.js</Code> and save to reload.
-            </Text>
-            <Link
-              color="teal.500"
-              href="https://chakra-ui.com"
-              fontSize="2xl"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learn Chakra
-            </Link>
-          </VStack>
-        </Grid>
-      </Box>
+      <Container textAlign="center"  width="25rem">
+      
+        <Stack direction="vertical" gap={"12px"}>
+          <Link to="layoutfirst">Layout First</Link>
+          <Link to="layoutsecond">Layout Second</Link>
+          <Link to="layoutthird">Layout Third</Link>
+        </Stack>
+      </Container>
+      <Routes>
+        <Route path="layoutfirst" element={<LayoutFirst />} />
+        <Route path="layoutsecond" element={<LayoutSecond />} />
+        <Route path="layoutthird" element={<LayoutThird/>} />
+      </Routes>
     </ChakraProvider>
   );
 }
