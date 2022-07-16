@@ -17,12 +17,12 @@ const LayoutThird = () => {
         "header header header"
         "main main main"
         "footer footer footer"`}
-       templateColumns= {`"auto" "auto" "auto" "auto"`}
+        templateColumns={`"auto" "auto" "auto" "auto"`}
         gap={4}
         className="grid"
       >
-        <GridItem colSpan={1} area={'header'}bg="yellow" />
-        <GridItem colSpan={1} area={'header'}bg="yellow" />
+        <GridItem colSpan={1} area={'header'} bg="yellow" />
+        <GridItem colSpan={1} area={'header'} bg="yellow" />
 
         <GridItem colSpan={3} area={'main'} bg="pink" />
         <GridItem colSpan={1} area={'footer'} bg="blue" />
